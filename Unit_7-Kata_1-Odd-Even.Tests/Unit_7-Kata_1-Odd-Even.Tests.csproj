@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Unit_7-Kata_1-Odd-Even.ConsoleApp\Unit_7-Kata_1-Odd-Even.ConsoleApp.csproj" />
+    <ProjectReference Include="..\Unit_7-Kata_1-Odd-Even.NumberProcessing\Unit_7-Kata_1-Odd-Even.NumberProcessing.csproj" />
   </ItemGroup>
 
 </Project>

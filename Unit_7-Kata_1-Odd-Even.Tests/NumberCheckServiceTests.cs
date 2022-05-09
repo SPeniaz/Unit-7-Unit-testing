@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using Unit_7_Kata_1_Odd_Even.NumberProcessing.Models;
 
 namespace Unit_7_Kata_1_Odd_Even.Tests
 {
@@ -23,7 +24,7 @@ namespace Unit_7_Kata_1_Odd_Even.Tests
     {
       var result = numberCheckService.CheckNumber(oddNumber);
 
-      Assert.AreEqual(result, numberType.Odd);
+      Assert.AreEqual(result, NumberType.Odd);
     }
 
     [TestCase(2)]
@@ -37,7 +38,7 @@ namespace Unit_7_Kata_1_Odd_Even.Tests
     {
       var result = numberCheckService.CheckNumber(number);
 
-      Assert.AreEqual(result, numberType.Even);
+      Assert.AreEqual(result, NumberType.Even);
     }
 
     [TestCase(2)]
@@ -51,7 +52,7 @@ namespace Unit_7_Kata_1_Odd_Even.Tests
     {
       var result = numberCheckService.CheckNumber(number);
 
-      Assert.AreEqual(result, numberType.Prime);
+      Assert.AreEqual(result, NumberType.Prime);
     }
   }
 }

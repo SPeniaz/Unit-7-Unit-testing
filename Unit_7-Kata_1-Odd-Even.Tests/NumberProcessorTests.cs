@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using System.Collections.Generic;
+using Unit_7_Kata_1_Odd_Even.NumberProcessing.Models;
 
 namespace Unit_7_Kata_1_Odd_Even.Tests
 {
@@ -16,18 +17,18 @@ namespace Unit_7_Kata_1_Odd_Even.Tests
     [Test]
     public void Process_Numbers_1_10_Returns_Correct_Result()
     {
-      var expected = new List<ProcessedNumber>
+      var expected = new List<ProcessedNumber>()
       {
-        {1, "Odd" },
-        {2, "Even, Prime" },
-        {3, "Odd, Prime" },
-        {4, "Even" },
-        {5, "Odd, Prime" },
-        {6, "Even" },
-        {7, "Odd, Prime" },
-        {8, "Even" },
-        {9, "Odd" },
-        {10, "Even" }
+        new ProcessedNumber(1, "Odd"),
+        new ProcessedNumber(2, "Even, Prime"),
+        new ProcessedNumber(3, "Odd, Prime"),
+        new ProcessedNumber(4, "Even"),
+        new ProcessedNumber(5, "Odd, Prime"),
+        new ProcessedNumber(6, "Even"),
+        new ProcessedNumber(7, "Odd, Prime"),
+        new ProcessedNumber(8, "Even"),
+        new ProcessedNumber(9, "Odd"),
+        new ProcessedNumber(10, "Even")
       };
 
       var result = numberCheckService.ProcessNumbers(1, 10);
@@ -40,8 +41,8 @@ namespace Unit_7_Kata_1_Odd_Even.Tests
     {
       var expected = new List<ProcessedNumber>
       {
-        {-1, "Incorrect number" },
-        {0, "Incorrect number" },
+         new ProcessedNumber(-1, "Incorrect number"),
+         new ProcessedNumber(0, "Incorrect number"),
       };
 
       var result = numberCheckService.ProcessNumbers(-1, 0);

@@ -1,5 +1,7 @@
 ﻿using NUnit.Framework;
 using System.Collections.Generic;
+using System.Linq;
+using Unit_7_Kata_1_Odd_Even.NumberProcessing;
 using Unit_7_Kata_1_Odd_Even.NumberProcessing.Models;
 
 namespace Unit_7_Kata_1_Odd_Even.Tests
@@ -9,9 +11,9 @@ namespace Unit_7_Kata_1_Odd_Even.Tests
     [TestCase(1, 4, ExpectedResult = 4)]
     [TestCase(1, 100, ExpectedResult = 100)]
     [TestCase(1, 200, ExpectedResult = 200)]
-    public void Process_Numbers_Returns_Correct_Length(int startIndex, int endIndex)
+    public int Process_Numbers_Returns_Correct_Length(int startIndex, int endIndex)
     {
-      return numberCheckService.ProcessNumbers(startIndex, endIndex).Count;
+       return NumberCheckProcessor.ProcessNumbers(startIndex, endIndex).Count;
     }
 
     [Test]
@@ -31,9 +33,9 @@ namespace Unit_7_Kata_1_Odd_Even.Tests
         new ProcessedNumber(10, "Even")
       };
 
-      var result = numberCheckService.ProcessNumbers(1, 10);
+      var result = NumberCheckProcessor.ProcessNumbers(1, 10);
 
-      Assert.AreEqual(expected, result);
+      CollectionAssert.AreEquivalent(expected, result);
     }
 
     [Test]
@@ -45,9 +47,9 @@ namespace Unit_7_Kata_1_Odd_Even.Tests
          new ProcessedNumber(0, "Incorrect number"),
       };
 
-      var result = numberCheckService.ProcessNumbers(-1, 0);
+      var result = NumberCheckProcessor.ProcessNumbers(-1, 0);
 
-      Assert.AreEqual(expected, result);
+      CollectionAssert.AreEquivalent(expected, result);
     }
   }
 }
